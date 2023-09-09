@@ -1,0 +1,58 @@
+<!doctype html>
+<script src="https://kihtrak.com/cloud_variable/cloudify.min.js"></script>
+<style>
+    * {
+        background-color: black;
+        color: white;
+		font-family: comic sans ms;
+		text-align: center;
+    }
+</style>
+<link rel="icon" href="icon.jpg">
+<html>
+	<head>
+		<title>Ysun</title>
+		<h1>website</h1>
+	</head>
+	<body>
+		<audio controls loop id="MEGALOVANIA">
+			<source src="Cover of MEGALOVANIA by Toby Fox.mp3">
+		</audio>
+		<audio controls loop id="MEGALOVANIA2">
+			<source src="Dr. Andonut's Rage (Original MEGALOVANIA from Earthbound Halloween Hack by Toby Fox).mp3">
+		</audio>
+		<audio controls loop id="MEGALOVANIA3">
+			<source src="MEGALOVANIA_But_Only_Drums.ogg">
+		</audio>
+		<script>
+			document.getElementById("MEGALOVANIA").volume = 0;
+			document.getElementById("MEGALOVANIA2").volume = 0;
+			document.getElementById("MEGALOVANIA3").volume = 0;
+			function sendTextMsg() {
+				cloud_textMsg = cloud_textMsg2;
+				cloud_textMsg2 = cloud_textMsg3;
+				cloud_textMsg3 = cloud_textMsg4;
+				cloud_textMsg4 = cloud_textMsg5;
+				cloud_textMsg5 = document.getElementById("textMsgInput").value;
+				updateTextMsg();
+			}
+			function updateTextMsg() {
+				document.getElementById("msg").innerHTML = cloud_textMsg;
+				document.getElementById("msg2").innerHTML = cloud_textMsg2;
+				document.getElementById("msg3").innerHTML = cloud_textMsg3;
+				document.getElementById("msg4").innerHTML = cloud_textMsg4;
+				document.getElementById("msg5").innerHTML = cloud_textMsg5;
+			}
+			updateTextMsg();
+		</script>
+		<p>text messages(put your name pls)</p>
+		<p id="msg"></p>
+		<p id="msg2"></p>
+		<p id="msg3"></p>
+		<p id="msg4"></p>
+		<p id="msg5"></p>
+		<textarea id="textMsgInput">hi im ... i want to say ...</textarea>
+	    <button onclick="sendTextMsg()">send</button>
+		<button onclick="updateTextMsg()">update</button>
+	</body>
+</html>
