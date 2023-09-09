@@ -21,7 +21,7 @@
 				cloud_textMsg2 = cloud_textMsg3;
 				cloud_textMsg3 = cloud_textMsg4;
 				cloud_textMsg4 = cloud_textMsg5;
-				cloud_textMsg5 = document.getElementById("textMsgInput").value;
+				cloud_textMsg5 = document.getElementById("name").value+": "+document.getElementById("textMsgInput").value;
 				updateTextMsg();
 			}
 			function updateTextMsg() {
@@ -40,7 +40,8 @@
 		<p id="msg4"></p>
 		<p id="msg5"></p>
 		<textarea id="textMsgInput">text here</textarea>
-	        <button onclick="sendTextMsg()">send</button>
+		<textarea id="name">name here</textarea>
+	    <button onclick="sendTextMsg()">send</button>
 		<button onclick="updateTextMsg()">update</button>
 	</body>
 </html>
